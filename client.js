@@ -1,4 +1,4 @@
-let employeeRegistry = {};
+let employeeRegistry = [];
 let firstName = '';
 let lastName = '';
 let idNumber = '';
@@ -12,5 +12,22 @@ function onReady(){
 }
 
 function logEmployee(){
-    firstName = 
+    firstName = $('#firstNameField').val();
+    lastName = $('#lastNameField').val();
+    idNumber = $('#idNumberField').val();
+    title = $('#titleField').val();
+    annualSalary = $('#annualSalaryField').val();
+    let employee = {
+        firstName,
+        lastName,
+        idNumber,
+        title,
+        annualSalary,
+    }
+    employeeRegistry.push(employee);
+    employeePublish();
+}
+
+function employeePublish() {
+    console.log('in employee publish');
 }
