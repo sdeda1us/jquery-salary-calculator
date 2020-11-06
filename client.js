@@ -26,8 +26,20 @@ function logEmployee(){
     }
     employeeRegistry.push(employee);
     employeePublish(employee);
+    totalMonthlyUpdate(employeeRegistry);
 }
 
 function employeePublish(rowData) {
     $('#employeeTable').append(`<tr><td>${rowData.firstName}</td><td>${rowData.lastName}</td><td>${rowData.idNumber}</td><td>${rowData.title}</td><td>${rowData.annualSalary}</td><td><button class="delete">Delete</button></td></tr>`);
+}
+
+function totalMonthlyUpdate(registry){
+    let totalMonthly = 0;
+    for(person of registry){
+        totalMonthly += person.annualSalary/12;
+    }
+    console.log(totalMonthly);
+    el = $('#totalMonthlyOut');
+    el.empty();
+    el.append(`Total Monthly: $${totalMonthly}`);
 }
