@@ -1,7 +1,7 @@
-![MIT LICENSE](https://img.shields.io/github/license/sdeda1us/the_marketplace.svg?style=flat-square)
-![REPO SIZE](https://img.shields.io/github/repo-size/sdeda1us/the_marketplace.svg?style=flat-square)
-![TOP_LANGUAGE](https://img.shields.io/github/languages/top/sdeda1us/the_marketplace.svg?style=flat-square)
-![FORKS](https://img.shields.io/github/forks/sdeda1us/the_marketplace.svg?style=social)
+![MIT LICENSE](https://img.shields.io/github/license/sdeda1us/jquery-salary-calculator.svg?style=flat-square)
+![REPO SIZE](https://img.shields.io/github/repo-size/sdeda1us/jquery-salary-calculator.svg?style=flat-square)
+![TOP_LANGUAGE](https://img.shields.io/github/languages/top/sdeda1us/jquery-salary-calculator.svg?style=flat-square)
+![FORKS](https://img.shields.io/github/forks/sdeda1us/jquery-salary-calculator.svg?style=social)
 
 # jQuery Salary Calculator
 
