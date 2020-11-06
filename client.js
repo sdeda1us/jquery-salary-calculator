@@ -9,6 +9,7 @@ $(document).ready(onReady);
 
 function onReady(){
     $('#submitButton').on('click', logEmployee)
+    $('#employeeTable').on('click', '.delete', deleteData);
 }
 
 function logEmployee(){
@@ -25,12 +26,18 @@ function logEmployee(){
         annualSalary,
     }
     employeeRegistry.push(employee);
-    employeePublish(employee);
+    employeePublish(employeeRegistry);
     totalMonthlyUpdate(employeeRegistry);
 }
 
 function employeePublish(rowData) {
-    $('#employeeTable').append(`<tr><td>${rowData.firstName}</td><td>${rowData.lastName}</td><td>${rowData.idNumber}</td><td>${rowData.title}</td><td>${rowData.annualSalary}</td><td><button class="delete">Delete</button></td></tr>`);
+    let el = $('#employeeTable');
+    el.empty();
+    el.append(`<tr><th>First Name</th><th>Last Name</th><th>ID</th><th>Title</th><th>Annual Salary</th><th></th></tr>`);
+    for(worker of rowData){
+        el.append(`<tr><td>${worker.firstName}</td><td>${worker.lastName}</td><td>${worker.idNumber}</td><td>${worker.title}</td><td>${worker.annualSalary}</td><td><button class="delete">Delete</button></td></tr>`);
+    }
+    el.append(`<tr></tr>`);
 }
 
 function totalMonthlyUpdate(registry){
@@ -42,4 +49,9 @@ function totalMonthlyUpdate(registry){
     el = $('#totalMonthlyOut');
     el.empty();
     el.append(`Total Monthly: $${totalMonthly}`);
+}
+
+function deleteData(){
+    console.log('just hanging out for right now');
+    console.log($(this));
 }
