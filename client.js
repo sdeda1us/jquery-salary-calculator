@@ -25,9 +25,9 @@ function logEmployee(){
         annualSalary,
     }
     employeeRegistry.push(employee);
-    employeePublish();
+    employeePublish(employee);
 }
 
-function employeePublish() {
-    console.log('in employee publish');
+function employeePublish(rowData) {
+    $('#employeeTable').append(`<tr><td>${rowData.firstName}</td><td>${rowData.lastName}</td><td>${rowData.idNumber}</td><td>${rowData.title}</td><td>${rowData.annualSalary}</td></tr>`);
 }
