@@ -35,7 +35,7 @@ function employeePublish(rowData) {
     el.empty();
     el.append(`<tr><th>First Name</th><th>Last Name</th><th>ID</th><th>Title</th><th>Annual Salary</th><th></th></tr>`);
     for(worker of rowData){
-        el.append(`<tr><td>${worker.firstName}</td><td>${worker.lastName}</td><td>${worker.idNumber}</td><td>${worker.title}</td><td>${worker.annualSalary}</td><td><button class="delete">Delete</button></td></tr>`);
+        el.append(`<tr class="rowLocation"><td>${worker.firstName}</td><td>${worker.lastName}</td><td>${worker.idNumber}</td><td>${worker.title}</td><td class="salary">${worker.annualSalary}</td><td><button class="delete">Delete</button></td></tr>`);
     }
     el.append(`<tr></tr>`);
 }
@@ -48,10 +48,16 @@ function totalMonthlyUpdate(registry){
     console.log(totalMonthly);
     el = $('#totalMonthlyOut');
     el.empty();
-    el.append(`Total Monthly: $${totalMonthly}`);
+    el.append(`Total Monthly: $${totalMonthly.toFixed(2)}`);
 }
 
 function deleteData(){
-    console.log('just hanging out for right now');
-    console.log($(this));
+    $(this).parents('.rowLocation').remove();
+    let targetLocation = $(this).parents('.rowLocation');
+    let getSalaryCell = targetLocation.children('.salary').text();
+    deleteRecord(getSalaryCell);
+}
+
+function deleteRecord{
+    
 }

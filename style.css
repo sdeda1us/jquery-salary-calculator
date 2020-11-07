@@ -1,0 +1,18 @@
+#headerLocation {
+    background-color: gray;
+    text-align: center;
+    color: white;
+    height: 100px;
+    width: auto;
+}
+
+.label{
+    font-size: 20px;
+}
+
+th, td {
+    padding: 8px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-collapse: collapse;
+}
