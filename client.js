@@ -37,7 +37,7 @@ function employeePublish(rowData) {
     for(worker of rowData){
         el.append(`<tr class="rowLocation"><td class="firstNameCell">${worker.firstName}</td><td class="lastNameCell">${worker.lastName}</td><td class="workerIdCell">${worker.idNumber}</td><td>${worker.title}</td><td class="salaryCell">${worker.annualSalary}</td><td><button class="delete">Delete</button></td></tr>`);
     }
-    el.append(`<tr></tr>`);
+    el.append(`<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>`);
 }
 
 function totalMonthlyUpdate(registry){
@@ -45,7 +45,6 @@ function totalMonthlyUpdate(registry){
     for(person of registry){
         totalMonthly += person.annualSalary/12;
     }
-    console.log(totalMonthly);
     el = $('#totalMonthlyOut');
     el.empty();
     el.append(`Total Monthly: $${totalMonthly.toFixed(2)}`);
