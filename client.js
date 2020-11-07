@@ -35,7 +35,7 @@ function employeePublish(rowData) {
     el.empty();
     el.append(`<tr><th>First Name</th><th>Last Name</th><th>ID</th><th>Title</th><th>Annual Salary</th><th></th></tr>`);
     for(worker of rowData){
-        el.append(`<tr class="rowLocation"><td>${worker.firstName}</td><td>${worker.lastName}</td><td>${worker.idNumber}</td><td>${worker.title}</td><td class="salary">${worker.annualSalary}</td><td><button class="delete">Delete</button></td></tr>`);
+        el.append(`<tr class="rowLocation"><td class="firstNameCell">${worker.firstName}</td><td class="lastNameCell">${worker.lastName}</td><td class="workerIdCell">${worker.idNumber}</td><td>${worker.title}</td><td class="salaryCell">${worker.annualSalary}</td><td><button class="delete">Delete</button></td></tr>`);
     }
     el.append(`<tr></tr>`);
 }
@@ -52,12 +52,20 @@ function totalMonthlyUpdate(registry){
 }
 
 function deleteData(){
-    $(this).parents('.rowLocation').remove();
+    //$(this).parents('.rowLocation').remove();
     let targetLocation = $(this).parents('.rowLocation');
-    let getSalaryCell = targetLocation.children('.salary').text();
-    deleteRecord(getSalaryCell);
+    let getfirstNameCell = targetLocation.children('.firstNameCell').text();
+    let getlastNameCell = targetLocation.children('.lastNameCell').text();
+    console.log(getlastNameCell);
+    let getworkerIdCell = targetLocation.children('.workerIdCell').text();
+    let getsalaryCell = targetLocation.children('.salaryCell').text();
+    deleteRecord(getfirstNameCell, getlastNameCell, getworkerIdCell, getsalaryCell);
 }
 
-function deleteRecord{
-    
+function deleteRecord(fName, lName, workID, salary){
+    for(record of employeeRegistry){
+      if(record.lastName === lName && record.idNumber === workID){
+          //console.log(record.lastName, record.idNumber);
+      }
+    }
 }
