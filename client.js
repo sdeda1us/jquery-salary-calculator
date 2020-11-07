@@ -52,20 +52,20 @@ function totalMonthlyUpdate(registry){
 }
 
 function deleteData(){
-    //$(this).parents('.rowLocation').remove();
     let targetLocation = $(this).parents('.rowLocation');
     let getfirstNameCell = targetLocation.children('.firstNameCell').text();
     let getlastNameCell = targetLocation.children('.lastNameCell').text();
-    console.log(getlastNameCell);
     let getworkerIdCell = targetLocation.children('.workerIdCell').text();
     let getsalaryCell = targetLocation.children('.salaryCell').text();
     deleteRecord(getfirstNameCell, getlastNameCell, getworkerIdCell, getsalaryCell);
+    employeePublish(employeeRegistry);
+    totalMonthlyUpdate(employeeRegistry);
 }
 
 function deleteRecord(fName, lName, workID, salary){
     for(record of employeeRegistry){
       if(record.lastName === lName && record.idNumber === workID){
-          //console.log(record.lastName, record.idNumber);
+           employeeRegistry.splice(employeeRegistry.indexOf(record), 1);
       }
     }
 }
