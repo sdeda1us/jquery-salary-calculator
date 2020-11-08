@@ -1,3 +1,8 @@
+body{
+    margin-left: 10px;
+    width: auto;
+}
+
 #headerLocation {
     background-color: gray;
     text-align: center;
@@ -19,4 +24,19 @@ th, td {
     padding: 8px;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
+    width: 140px;
+    height: 20px;
+    
+}
+
+th {
+    background-color: lightgrey;
+}
+
+#lastRow {
+    background-color: black;
+}
+
+.deleteCell{
+text-align: center;
 }

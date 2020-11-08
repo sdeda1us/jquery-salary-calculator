@@ -13,6 +13,7 @@ function onReady(){
 }
 
 function logEmployee(){
+    event.preventDefault();
     firstName = $('#firstNameField').val();
     lastName = $('#lastNameField').val();
     idNumber = $('#idNumberField').val();
@@ -28,6 +29,11 @@ function logEmployee(){
     employeeRegistry.push(employee);
     employeePublish(employeeRegistry);
     totalMonthlyUpdate(employeeRegistry);
+    $('#firstNameField').val('');
+    $('#lastNameField').val('');
+    $('#idNumberField').val('');
+    $('#titleField').val('');
+    $('#annualSalaryField').val('');
 }
 
 function employeePublish(rowData) {
@@ -35,9 +41,9 @@ function employeePublish(rowData) {
     el.empty();
     el.append(`<tr><th>First Name</th><th>Last Name</th><th>ID</th><th>Title</th><th>Annual Salary</th><th></th></tr>`);
     for(worker of rowData){
-        el.append(`<tr class="rowLocation"><td class="firstNameCell">${worker.firstName}</td><td class="lastNameCell">${worker.lastName}</td><td class="workerIdCell">${worker.idNumber}</td><td>${worker.title}</td><td class="salaryCell">${worker.annualSalary}</td><td><button class="delete">Delete</button></td></tr>`);
+        el.append(`<tr class="rowLocation"><td class="firstNameCell">${worker.firstName}</td><td class="lastNameCell">${worker.lastName}</td><td class="workerIdCell">${worker.idNumber}</td><td>${worker.title}</td><td class="salaryCell">${worker.annualSalary}</td><td class="deleteCell"><button class="delete">Delete</button></td></tr>`);
     }
-    el.append(`<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>`);
+    el.append(`<tr id="lastRow"><td></td><td></td><td></td><td></td><td></td><td></td></tr>`);
 }
 
 function totalMonthlyUpdate(registry){
@@ -45,6 +51,7 @@ function totalMonthlyUpdate(registry){
     for(person of registry){
         totalMonthly += person.annualSalary/12;
     }
+    commaMyNumber(totalMonthly);
     el = $('#totalMonthlyOut');
     el.empty();
     el.append(`Total Monthly: $${totalMonthly.toFixed(2)}`);
@@ -67,4 +74,10 @@ function deleteRecord(fName, lName, workID, salary){
            employeeRegistry.splice(employeeRegistry.indexOf(record), 1);
       }
     }
+}
+
+function commaMyNumber(rawNumber){
+    stringNumber = rawNumber.toFixed(2).toString().split('.');
+    console.log(stringNumber);
+    //stringNumber[0] = stringNumber[0].replace(/\B());
 }
