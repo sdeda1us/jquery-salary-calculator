@@ -7,43 +7,34 @@
 
 ## Description
 
-_Duration: Weekend_
+_Duration: Weekend 12 hours_
 
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it? 
+This application allows a user to create a data object containing identifiers for employees (First Name, Last Name, ID, & Title) and their annual salary. The application displays the entered data as a table. Below the table, the application shows the total monthly expenditure on salary per month for the employees entered into the application. Entries may also be deleted by the user which will remove that entry and recalculate the toal monthly salary expenditure without the deleted entry.  
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam at massa in faucibus. Etiam volutpat, risus non mollis convallis, velit nisi pulvinar mi, eu faucibus orci nisi eget nibh. Integer a velit pretium, volutpat arcu eleifend, fringilla elit. Cras erat sapien, convallis venenatis tellus vitae, feugiat dictum felis.
+While these procedures could be executed strictly as outputs, this application explicitly writes and deletes entries to the data level. There is a data object with all of the entered information the user inputs and/or deletes from it. This makes it possible to expand the functionality of this application in the future to allow for the possibility of allowing the user to export the data to a file or to modify the table into an interactive spreadsheet in future versions.  
 
-Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque facilisis. Phasellus varius malesuada semper. Cras sollicitudin diam mollis maximus aliquam.
+To see the fully functional site, please visit: [the herokuapp deployment](https://vast-beach-59962.herokuapp.com/)
 
-To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
+## Screen Shots
 
-## Screen Shot
+![Application Initial State](initial_state.png)
 
-Include one or two screen shots of your project here (optional). Remove if unused.
 
 ## Installation
 
 Open index.html in the browesr. 
 
-## Usage
-How does someone use this application? Tell a user story here.
-
-1. xxx
-2. xxx
-3. xxx
-4. xxx
-5. xxx
-6. xxx
-
 
 ## Built With
 
-List technologies and frameworks here
+- html
+- css
+- javascript
+- jquery
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-_Note, include this only if you have a license file. GitHub will generate one for you if you want!_
 
 ## Acknowledgement
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people)
