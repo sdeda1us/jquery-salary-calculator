@@ -77,7 +77,14 @@ function deleteRecord(fName, lName, workID, salary){
 }
 
 function commaMyNumber(rawNumber){
-    stringNumber = rawNumber.toFixed(2).toString().split('.');
-    console.log(stringNumber);
-    //stringNumber[0] = stringNumber[0].replace(/\B());
+    let stringNumber = rawNumber.toFixed(2).toString().split('.');
+    let decimalCounter = 0;
+    let stringOut = null;
+    for(i=stringNumber[0].length-1; i > 0; i--){
+        decimalCounter ++;
+        if(decimalCounter % 3 === 0){
+            console.log(stringNumber[0].slice(0, i) + ',' + (stringNumber[0].slice(i)));
+        }
+        
+    }
 }
