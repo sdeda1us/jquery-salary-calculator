@@ -17,8 +17,11 @@ To see the fully functional site, please visit: [the herokuapp deployment](https
 
 ## Screen Shots
 
+Initial state of the application
 ![Application Initial State](initial_state.png)
 
+The application in action
+![Application in Action](salary_calc_deployed.png)
 
 ## Installation
 
