@@ -3,18 +3,6 @@ body{
     width: auto;
 }
 
-#headerLocation {
-    background-color: gray;
-    text-align: center;
-    color: white;
-    height: 100px;
-    width: auto;
-}
-
-.label{
-    font-size: 20px;
-}
-
 table {
     margin-left: 20px;
     margin-right: auto;
@@ -39,8 +27,8 @@ tr:nth-child(odd){
    background-color: lightgrey;
 }
 
-#lastRow {
-    background-color: black;
+.label{
+    font-size: 20px;
 }
 
 .salaryCell{
@@ -49,4 +37,16 @@ tr:nth-child(odd){
 
 .deleteCell{
 text-align: center;
+}
+
+#headerLocation {
+    background-color: gray;
+    text-align: center;
+    color: white;
+    height: 100px;
+    width: auto;
+}
+
+#lastRow {
+    background-color: black;
 }

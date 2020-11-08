@@ -1,3 +1,4 @@
+// -- Global Variables
 let employeeRegistry = [];
 let firstName = '';
 let lastName = '';
@@ -5,13 +6,20 @@ let idNumber = '';
 let title = ''
 let annualSalary = 0;
 
+// -- jQuery Ready
 $(document).ready(onReady);
 
+// -- on click event handlers
 function onReady(){
     $('#submitButton').on('click', logEmployee)
     $('#employeeTable').on('click', '.delete', deleteData);
 }
 
+/* -- commits data to employeRegistry 
+   -- calls function to publish to DOM
+   -- calls function to update monthly salary output
+   -- resets input fields to placeholder value 
+*/
 function logEmployee(){
     event.preventDefault();
     firstName = $('#firstNameField').val();
@@ -29,6 +37,7 @@ function logEmployee(){
     employeeRegistry.push(employee);
     employeePublish(employeeRegistry);
     totalMonthlyUpdate(employeeRegistry);
+    //resetting inputs
     $('#firstNameField').val('');
     $('#lastNameField').val('');
     $('#idNumberField').val('');
@@ -36,6 +45,8 @@ function logEmployee(){
     $('#annualSalaryField').val('');
 }
 
+
+// commits employeeRegistry to the DOM
 function employeePublish(rowData) {
     let el = $('#employeeTable');
     el.empty();
@@ -46,17 +57,22 @@ function employeePublish(rowData) {
     el.append(`<tr id="lastRow"><td></td><td></td><td></td><td></td><td></td><td></td></tr>`);
 }
 
+/* -- calulates total monthly salary 
+   -- calls function to add commas to total monthly salary
+   -- outputs to the DOM
+*/
 function totalMonthlyUpdate(registry){
     let totalMonthly = 0;
     for(person of registry){
         totalMonthly += person.annualSalary/12;
     }
-    commaMyNumber(totalMonthly);
+    totalMonthlyCommas = commaMyNumber(totalMonthly);
     el = $('#totalMonthlyOut');
     el.empty();
-    el.append(`Total Monthly: $${totalMonthly.toFixed(2)}`);
+    el.append(`Total Monthly: $${totalMonthlyCommas}`);
 }
 
+// removes data from DOM and calls deleteRecord
 function deleteData(){
     let targetLocation = $(this).parents('.rowLocation');
     let getfirstNameCell = targetLocation.children('.firstNameCell').text();
@@ -68,6 +84,7 @@ function deleteData(){
     totalMonthlyUpdate(employeeRegistry);
 }
 
+// removes the delted record from employeeRegistry
 function deleteRecord(fName, lName, workID, salary){
     for(record of employeeRegistry){
       if(record.lastName === lName && record.idNumber === workID){
@@ -76,15 +93,16 @@ function deleteRecord(fName, lName, workID, salary){
     }
 }
 
+//converts total monthly ouput into a number with commas
 function commaMyNumber(rawNumber){
     let stringNumber = rawNumber.toFixed(2).toString().split('.');
     let decimalCounter = 0;
-    let stringOut = null;
     for(i=stringNumber[0].length-1; i > 0; i--){
         decimalCounter ++;
         if(decimalCounter % 3 === 0){
-            console.log(stringNumber[0].slice(0, i) + ',' + (stringNumber[0].slice(i)));
-        }
-        
+            commaPlaces.push(i);
+            stringNumber[0] = stringNumber[0].slice(0, i) + ',' + (stringNumber[0].slice(i));
+        } 
     }
+    return stringNumber[0] + '.' + stringNumber[1];  
 }
