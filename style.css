@@ -35,6 +35,10 @@ th {
     background-color: lightgrey;
 }
 
+tr:nth-child(odd){
+   background-color: lightgrey;
+}
+
 #lastRow {
     background-color: black;
 }
