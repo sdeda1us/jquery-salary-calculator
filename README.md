@@ -49,9 +49,9 @@ _Note, include this only if you have a license file. GitHub will generate one fo
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people)
 
 Special thanks to my learnign group for this week from my Vatti Cohort:
-- https://github.com/zuberabdikadir
-- https://www.linkedin.com/in/joellekado/
-- https://github.com/jordanNewberry21
+- [Zuber Abdikadir](https://github.com/zuberabdikadir)
+- [Joelle Kado](https://www.linkedin.com/in/joellekado/)
+- [Jordan Newberry](https://github.com/jordanNewberry21)
 
 ## Support
-If you have suggestions or issues, please email me at [youremail@whatever.com](www.google.com)
+If you have suggestions or issues, please email me at [steven.maloney@gmail.com](mailto:steven.maloney@gmail.com)
