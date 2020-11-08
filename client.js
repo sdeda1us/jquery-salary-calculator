@@ -97,6 +97,7 @@ function deleteRecord(fName, lName, workID, salary){
 function commaMyNumber(rawNumber){
     let stringNumber = rawNumber.toFixed(2).toString().split('.');
     let decimalCounter = 0;
+    let commaPlaces = [];
     for(i=stringNumber[0].length-1; i > 0; i--){
         decimalCounter ++;
         if(decimalCounter % 3 === 0){
