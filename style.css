@@ -16,6 +16,8 @@ body{
 }
 
 table {
+    margin-left: 20px;
+    margin-right: auto;
     border-collapse: collapse;
     border: 2px solid black;
 }
@@ -35,6 +37,10 @@ th {
 
 #lastRow {
     background-color: black;
+}
+
+.salaryCell{
+    text-align: right;
 }
 
 .deleteCell{
